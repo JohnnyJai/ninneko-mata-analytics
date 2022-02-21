@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css",
+    "main.js": "/ninneko-mata-analytics/static/js/main.61cb3eab.js",
+    "static/media/MINTING_DATA.txt": "/ninneko-mata-analytics/static/media/MINTING_DATA.6d8efaa5eb238f5a13ed.txt",
+    "static/media/BURNING_DATA.txt": "/ninneko-mata-analytics/static/media/BURNING_DATA.bbcfd2c92e2e1880bd8d.txt",
+    "index.html": "/ninneko-mata-analytics/index.html",
+    "main.c6c0da1c.css.map": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css.map",
+    "main.61cb3eab.js.map": "/ninneko-mata-analytics/static/js/main.61cb3eab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6c0da1c.css",
+    "static/js/main.61cb3eab.js"
+  ]
+}
