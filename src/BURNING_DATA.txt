@@ -3,8 +3,8 @@
 <html lang="en">
 <head><title>
 	MATA Token (MATA) Token Tracker | BscScan
-</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="Description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,184 and updated information of the token. The token tracker page also shows the analytics and historical data." /><meta name="author" content="BscScan.com" /><meta name="keywords" content="binance, explorer, BNB, search, blockchain, crypto, currency" /><meta name="format-detection" content="telephone=no" />
-<meta property="og:title" content="MATA Token (MATA) Token Tracker | BscScan" /> <meta property="og:description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,184 and updated information of the token. The token tracker page also shows the analytics and historical data." /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="Binance (BNB) Blockchain Explorer" /> <meta property="og:url" content="http://bscscan.com/token/0x175facdd947c995ad547f6ad952d26826758a4da" /> <meta property="og:image" content="https://BscScan.com/images/brandassets/BscScan-logo-circle.jpg" /> <meta property="og:image:alt" content="Visit BscScan.com" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="MATA Token (MATA) Token Tracker | BscScan" /> <meta property="twitter:description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,184 and updated information of the token. The token tracker page also shows the analytics and historical data." /> <meta name="twitter:site" content="@BscScan" /> <meta property="twitter:image" content="https://BscScan.com/images/brandassets/BscScan-logo-circle.jpg" />
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="Description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,183 and updated information of the token. The token tracker page also shows the analytics and historical data." /><meta name="author" content="BscScan.com" /><meta name="keywords" content="binance, explorer, BNB, search, blockchain, crypto, currency" /><meta name="format-detection" content="telephone=no" />
+<meta property="og:title" content="MATA Token (MATA) Token Tracker | BscScan" /> <meta property="og:description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,183 and updated information of the token. The token tracker page also shows the analytics and historical data." /> <meta property="og:type" content="website" /> <meta property="og:site_name" content="Binance (BNB) Blockchain Explorer" /> <meta property="og:url" content="http://bscscan.com/token/0x175facdd947c995ad547f6ad952d26826758a4da" /> <meta property="og:image" content="https://BscScan.com/images/brandassets/BscScan-logo-circle.jpg" /> <meta property="og:image:alt" content="Visit BscScan.com" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="MATA Token (MATA) Token Tracker | BscScan" /> <meta property="twitter:description" content="MATA Token (MATA) Token Tracker on BscScan shows the price of the Token $0.00, total supply 72,038,937, number of holders 1,183 and updated information of the token. The token tracker page also shows the analytics and historical data." /> <meta name="twitter:site" content="@BscScan" /> <meta property="twitter:image" content="https://BscScan.com/images/brandassets/BscScan-logo-circle.jpg" />
 <link rel="shortcut icon" href="/images/favicon.ico" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46998878-23"></script>
 <script>
@@ -98,7 +98,7 @@
 </a>
 <div id="ethPrice">
 <div class="d-none d-md-inline-block u-label u-label--price rounded mt-1 ml-n1 text-nowrap">
-<span class="text-dark">BNB: $363.92</span><span data-toggle="tooltip" data-placement="top" data-title="Changes in the last 24 hours"><span class='text-danger'> (-5.47%)</span></span>
+<span class="text-dark">BNB: $361.48</span><span data-toggle="tooltip" data-placement="top" data-title="Changes in the last 24 hours"><span class='text-danger'> (-6.10%)</span></span>
 </div>
 </div>
 </div>
@@ -335,7 +335,7 @@ Holders:</div>
 <div class="col-md-8">
 <div class="d-flex align-items-center">
 <div class="mr-3">
-1,184 addresses
+1,183 addresses
 </div>
 <span id="sparkholderscontainer"></span>
 </div>
@@ -417,9 +417,20 @@ Not Available, <a href='/login?msg=NeedLogin&ref=tokenupdate&ret=0x175facdd947c9
 <div class="d-flex justify-content-center">
 <span style="line-height: 7.4;">&nbsp;</span>
 <div class="text-center d-inline-block">
-
-<ins data-revive-zoneid="4" data-revive-id="d2636ef8c49e3f153802edf66c0e240f"></ins>
-<script async src="//mct.bscscan.com/www/d/asyncjses.php"></script>
+<div class="showcase-banner-spacing text-center my-4">
+<a class="d-inline-block d-sm-none position-relative text-dark" target="_blank" href="https://goto.bscscan.com/rd/ERY9I4HM7G6VZ5WGC1AQUHCZD">
+<span class="showcase-banner-text bg-white font-size-1 shadow rounded px-1" style="left: 1rem;">Ad</span>
+<img class="img-fluid rounded" src="/images/gen/aax_034_321x101.png" alt="Ads">
+</a>
+<a class="d-none d-sm-inline-block d-lg-none position-relative text-dark" target="_blank" href="https://goto.bscscan.com/rd/6ARAU1Z1J7BDJUBNB78BKH8VW">
+<span class="showcase-banner-text bg-white font-size-1 shadow rounded px-1" style="left: 1rem;">Ad</span>
+<img class="img-fluid rounded" src="/images/gen/aax_034_730x90.png" alt="Ads">
+</a>
+<a class="d-none d-lg-inline-block position-relative text-dark" target="_blank" href="https://goto.bscscan.com/rd/BG6GQCE6JVKJR7XCUCI9PPG5F">
+<span class="showcase-banner-text bg-white font-size-1 shadow rounded px-1" style="left: 1rem;">Ad</span>
+<img class="img-fluid rounded" src="/images/gen/aax_034_1140x90.png" alt="Ads">
+</a>
+</div>
 </div>
 </div>
 <div id="ContentPlaceHolder1_filteredByAddress" class="card mb-1">
@@ -637,9 +648,9 @@ Exchange Data Source: <a href='https://www.coingecko.com/en' target='_blank' rel
 </div>
 <div id="iframefancybox-container"></div>
 <form method="post" action="./0x175facdd947c995ad547f6ad952d26826758a4da?a=0x0000000000000000000000000000000000000000" id="ctl00" class="mx-md-auto">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="PcPbpq7JY8zzfs6mgPWcU16XT2rFj9rQd2hIZFxl2OwNb+zqHdWMKB/jkQVWzQEPOqLNcvpgBlG9qEfWShTNTuaCK8JFiaayQeDeBe+eV/A=" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="iXG4/GXgyVH48s8WUfisel1/0JQaDIc07By6ltL9tVfwN6cMuoBiS8IGUL5AfE1SosOW+Eqeg4ZOb6HQHnCxN68dc2z+BOdY1i7XiHvNBgg=" />
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7A5DEF22" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="6cWHN4KIxhiO8AkGq+xBX8ewgIYOy53INt8xwcRdN0dCfqrzIpWtMxicl3OAc19ejU5CpjVShSy8gCvX158G2ySsaxJKMkpb42plN4VgwJtSA3lrKhrHzO3+1iejz5yqo5qTOih07c01TihwNurvgDGkG9bpjhFPvyIVo82XA3Y=" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ybE2UL7+XsyDQ1ULpMLUPRFIuCPgp10i112Y7afCWJvtQs2cN3Gi5LXDk+mITZUqnojsoTX5DXzfIelgl7y58Xd3+TlOIoLWhKjFc/P+T/Nua6dCyZfQh+SQzxLG0WczL+EnlPnxG2V/HlEiutSeDvtA8Js1HTfHIvFjlhTwdlw=" />
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="myModal">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
@@ -793,9 +804,9 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
 <hr class="opacity-md">
 <div class="row justify-content-between align-items-center font-size-1">
 <div class="col-md-6 mb-2 mb-md-0 d-flex">
-<p class="mb-0 text-white">BscScan © 2022 (BSC-B)
+<p class="mb-0 text-white">BscScan © 2022 (BSC-C)
 <span class="mx-1">|</span> ⛏ Built by the same team behind <a class="text-primary" href="https://etherscan.io/" target="_blank"><b>Etherscan</b></a> <span class="mx-1">|</span> <a class="text-white-70" href="/address/0x71c7656ec7ab88b098defb751b7401b5f6d8976f">Donate</a> <i class="fas fa-heart text-danger"></i>
-</p>
+ </p>
 </div>
 <div class="col-md-6 text-md-right">
 <ul class="list-inline mb-0">
@@ -828,7 +839,7 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
 </p>
 </span>
 <div>
-<button id="btnCookie" class="btn btn-sm btn-primary text-nowrap py-1" data-dismiss="alert" aria-label="Close">Got It</button>
+<button id="btnCookie" class="btn btn-sm btn-primary text-nowrap py-1" data-dismiss="alert" aria-label="Close">Got It</button> 
 </div>
 </div>
 </div>
@@ -891,7 +902,7 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
         });
     </script>
 <script type="text/javascript">
-        var sid = 'e39316b43dd5bc909f9354146bfbb302';
+        var sid = '9903dd267ddbbc07f1e791b190a71963';
         var strGlobal = sessionStorage.getItem("ShowAs");
         var cookieconsent = getCookie("bscscan_cookieconsent");
         if (cookieconsent !== "True") {
@@ -1004,7 +1015,7 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
 <script type="text/javascript"> 
         var enableTokenAnalytic = true;
         var enableTokenTrades = false;        
-        var sid = 'e39316b43dd5bc909f9354146bfbb302';
+        var sid = '9903dd267ddbbc07f1e791b190a71963';
 
         var litreadContractAddress = '0x175facdd947c995ad547f6ad952d26826758a4da';
         var litProxyContractABIAddress = "0x3edd25014c0369fbc9111f034e0564a525003f51";
@@ -1590,7 +1601,7 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
         });
 
         //-- begin code for checking for disqus comments---
-        var blnCheckDisqusCount = false;
+        var blnCheckDisqusCount = true;
         if (blnCheckDisqusCount == true) {
             checkdisquscomment();
         }
@@ -1720,5 +1731,5 @@ BscScan is a Block Explorer and Analytics Platform for Binance Smart Chain
         }
 
     </script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e135ed7bb9ef5b5',m:'CULfIoMZgascy2hkQOItlRtLXBs9uNEdLLzsXmlZMR8-1645482115-0-AduUwYCUoXCqZRaDcksmdLSnA692bc6HXdc2axqMsXtPEqPmNExKEDfMKxDDlQD5vsWEf4Bp6DZRJUogzPst5QmWTRY0L/UzmoqTFVe912daYFuaKjyejm8hdNd1Ngqp7b1JBrTqodeX9YRbsflCBMXyjJSV2ZcTfXr1w+kyQEwVFIDInT0VqmHkiPFqh0tHO4cxUbEPC2Cd2hHPgFCMbyFu36cL/WWPCB/KYQRvwEqx',s:[0x35817a5265,0x6ca0e32e68],}})();</script></body>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e136e443b2a03fc',m:'5sSAx4ac78WCFdRo0tIiZmgIeujMppOA0mLPJ3RQjFU-1645482747-0-AXCpeAnfJK8Sy/nX1sHApPSgUnspRtkUbbF+ArvROKl1p8inZUep3u6VFGOA8WxVcaO6F273M8AHIMgoa1dazMQYzgutRM4R8fPWMKcp+CR7Y7qpaXaqyGansbangA2UIfjLQ2jOBvvPwD/rfFxXvMLGTgstv70/gs+L1HPfAQzt2pvc7aqZCSaZt5v4+4s1SYnAoK55VY55EErNumsf/ofqmq1qemYrrMDwduidewXu',s:[0x7bb886cfca,0xd999f71227],}})();</script></body>
 </html>
