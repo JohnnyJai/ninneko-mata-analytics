@@ -1,0 +1,42 @@
+nav {
+  background-color: #252834;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav img {
+  max-width: 100%;
+  max-height: 75%;
+  display: block;
+  padding-right: 10px;
+}
+
+nav .title {
+  color: #bfc6d1;
+  margin: 0;
+}
+
+nav h6 {
+  flex-grow: 1;
+  text-align: right;
+  font-style: italic;
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table th, .table td {
+  font-size: 1rem !important;
+}

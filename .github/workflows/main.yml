@@ -1,0 +1,33 @@
+name: Update burn and mint data
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  update_daily_schedule:
+    name: Update data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Fetch the data and save it
+        run: |
+            curl 'https://bscscan.com/token/0x175facdd947c995ad547f6ad952d26826758a4da?a=0x0000000000000000000000000000000000000000#tokenAnalytics' > src/BURNING_DATA.txt
+            curl 'https://bscscan.com/token/0x175facdd947c995ad547f6ad952d26826758a4da?a=0x000000000000000000000000000000000000dead#tokenAnalytics' > src/MINTING_DATA.txt
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add .
+            git commit -m "Update data"
+            git push
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: |
+            npm install
+            npm run build
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
