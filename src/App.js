@@ -15,7 +15,6 @@ import {
 import "./App.css";
 import BURNING_DATA_FILE from "./BURNING_DATA.txt";
 import MINTING_DATA_FILE from "./MINTING_DATA.txt";
-import KARASTAR_LOGO from "./karastar_logo.png";
 import TestTable from "./components/table";
 
 function App() {
