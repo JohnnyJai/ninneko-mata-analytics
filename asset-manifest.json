@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css",
-    "main.js": "/ninneko-mata-analytics/static/js/main.6edf5985.js",
-    "static/media/BURNING_DATA.txt": "/ninneko-mata-analytics/static/media/BURNING_DATA.15e225463b8152bb0599.txt",
-    "static/media/MINTING_DATA.txt": "/ninneko-mata-analytics/static/media/MINTING_DATA.cea1340c613e0b18748b.txt",
+    "main.js": "/ninneko-mata-analytics/static/js/main.80562dd7.js",
+    "static/media/BURNING_DATA.txt": "/ninneko-mata-analytics/static/media/BURNING_DATA.5875a9a7ed3323e3d24e.txt",
+    "static/media/MINTING_DATA.txt": "/ninneko-mata-analytics/static/media/MINTING_DATA.d95b4ea5a26f6376466f.txt",
     "index.html": "/ninneko-mata-analytics/index.html",
     "main.c6c0da1c.css.map": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css.map",
-    "main.6edf5985.js.map": "/ninneko-mata-analytics/static/js/main.6edf5985.js.map"
+    "main.80562dd7.js.map": "/ninneko-mata-analytics/static/js/main.80562dd7.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c0da1c.css",
-    "static/js/main.6edf5985.js"
+    "static/js/main.80562dd7.js"
   ]
 }
