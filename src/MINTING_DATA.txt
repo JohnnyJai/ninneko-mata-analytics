@@ -90,7 +90,7 @@
 
         var contractAddress = '0x175facdd947c995ad547f6ad952d26826758a4da';
         var address = '0x0000000000000000000000000000000000000000';
-        var current_usd_eth_value = 335.05;
+        var current_usd_eth_value = 333.3;
         var chartHeight = 500;
 
         var plotData = eval([]);
@@ -691,7 +691,7 @@ Token Transfer Counts</a></li>
 <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
 <span id="tab4_default_content"></span>
 <div style="display: none" id="container_2c">
- <div class="d-md-flex justify-content-between align-items-center mb-3">
+<div class="d-md-flex justify-content-between align-items-center mb-3">
 <h4 class="h6 mb-1 mb-md-0">Time Series: Token Transfer Amounts for User Address</h4>
 <div class="text-secondary">
 <span id="addressdisplay_2c"></span>
@@ -730,7 +730,7 @@ Token Transfer Counts</a></li>
 </div>
 </div>
 <script src="/assets/vendor/bootstrap/bootstrap.min.js?v=22.1.5.1"></script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e2693356d7730b9',m:'cLa.fP6i2DVwKz_NTcX05SKcmwm9GRSwnDMsU9B_F5U-1645683491-0-AcCg9lTCiHMJ3DxaccaxmT/DRc/Epx221xrBacbnU8WZjLCZee/bb7O+NI0jQZSoAld/I+JvIFzg2e8waZjDD2LBFIN5IfPVM29valmbI/hIBrMgdjCPlLp5yfbA2AuQ5NvDliOHbAlHaeST5I7HTdKy9yUreVm6B42KORJEeUBHrcfSyJasdjtEihOsUeRAHQBnTkj3EWG09WYWsYBQ7i/3rkH0jiiB49BXry+7dRGPBCd/xU/HbggP8DtJY4ioDoDxMqoMlLx/5MVhoOUjl8AvstY0WKLldu8x4h+Ik1wj',s:[0x55283f77da,0x99df7474b2],}})();</script></body>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e28ace31882820e',m:'pKyj_7ucQMG1lcfkEuHtA.DHTSAwFgOelCre.9ymbew-1645705514-0-ATpKZaGN4hb0AGpQSzptTUPcvI+tJk9iy7Zm9DrQEg0CeoqgA1ev05zS2S+WDVB/AYO38GFQFHSQYhyM1Oa4kyaS/71pF79YYtnngbEWwIaOapgcbih/k3NiQFQZ6FrlMGxUc1xQhU1mlgZpqU4SVjdB3CqjGN9KdwMBMrQTynKHe1ysznekb/Vd3Yzs4cwypP1xJRlx67vA5E/B0j53ew4IXcXkJJ1d8sgSkTe3bB4L0V0QUxVTkw0cdg6JgKULH+gkTvI0A8F4EX47WvOWWy9wT/kHrbnAmVCg39fXwqaV',s:[0x309a2dbea9,0x857b7b7674],}})();</script></body>
 <script type="text/javascript"> 
     $(window).on('load', function () {
         $('#overlay').fadeOut();
