@@ -90,7 +90,7 @@
 
         var contractAddress = '0x175facdd947c995ad547f6ad952d26826758a4da';
         var address = '0x0000000000000000000000000000000000000000';
-        var current_usd_eth_value = 363.56;
+        var current_usd_eth_value = 365.25;
         var chartHeight = 500;
 
         var plotData = eval([]);
@@ -690,7 +690,7 @@ Token Transfer Counts</a></li>
 </div>
 <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
 <span id="tab4_default_content"></span>
-<div style="display: none" id="container_2c">
+ <div style="display: none" id="container_2c">
 <div class="d-md-flex justify-content-between align-items-center mb-3">
 <h4 class="h6 mb-1 mb-md-0">Time Series: Token Transfer Amounts for User Address</h4>
 <div class="text-secondary">
@@ -730,7 +730,7 @@ Token Transfer Counts</a></li>
 </div>
 </div>
 <script src="/assets/vendor/bootstrap/bootstrap.min.js?v=22.1.5.1"></script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e30e8b2691f0927',m:'0NtF83RshqZYZtEFr3BAm31Opheif6LYC3PF_5NT1Uc-1645791850-0-AXhvM9MjjoLlZw1Y2XY5+pEvSo1s3en+bYXtRTngtnm4aE06g6GN4RzL7Xnz6NoRkbT41duQXSqTd+sPlsVb5YmbckEjUtbBuWm49EVM8mJXWXov37Bt7Tu8HGEJmbrws3vHRFSaJjxeMmvY11ABfBSgbslVewK1LnNMfCEcvq01397wZSoQGsPvt8X8PgH2EOB8UaBiRRoxHDwffi+QYlFpnJnC69kyanjTQR9obvrKGYPHf9T35nATt4FwQeQ7OdNCZunR9UTajvPLjrp6WSeUKBBDPCefsTM1goF2oqrc',s:[0x37b616208f,0x5af4c273ba],}})();</script></body>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e32ef568b5f610e',m:'WIEDwJNDNh7aAU1yF6.jWvhLyEJZSDq8uIAkdn40ey0-1645813093-0-AX8PqCKpEFtdmLzuXL7TqodY01yKr7zvfN/7Yh4TkjWtCSc2+V4h2ibKRM0vstYclD1DpxRAwUnGetVZ60c6EBayfTMBxWLj1CVnLgFTfCZb4DGe14TicnEoCIqEdt+a+WQD1itQ1hX2v4xfzpeljrUdtmIOUhsjU6My9/fLcQb/bqyhg/dzwSgvuB5OyPKZBaNJPNovYb+XRLI4jt5j30YM4wA8EIMOcsB8gsqCOyeh1kT1WLTQw5dP3g2tiPB7183pdWPpGq979ZyaCWetA1cq4FXaHLHZeEzIXZQ5xH6m',s:[0xb3df606e2d,0x052f233ae2],}})();</script></body>
 <script type="text/javascript"> 
     $(window).on('load', function () {
         $('#overlay').fadeOut();
