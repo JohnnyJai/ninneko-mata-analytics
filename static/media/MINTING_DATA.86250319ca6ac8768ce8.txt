@@ -90,7 +90,7 @@
 
         var contractAddress = '0x175facdd947c995ad547f6ad952d26826758a4da';
         var address = '0x0000000000000000000000000000000000000000';
-        var current_usd_eth_value = 365.25;
+        var current_usd_eth_value = 381.78;
         var chartHeight = 500;
 
         var plotData = eval([]);
@@ -690,7 +690,7 @@ Token Transfer Counts</a></li>
 </div>
 <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
 <span id="tab4_default_content"></span>
- <div style="display: none" id="container_2c">
+<div style="display: none" id="container_2c">
 <div class="d-md-flex justify-content-between align-items-center mb-3">
 <h4 class="h6 mb-1 mb-md-0">Time Series: Token Transfer Amounts for User Address</h4>
 <div class="text-secondary">
@@ -726,11 +726,11 @@ Token Transfer Counts</a></li>
 </div>
 <div class="table-responsive" style="overflow: auto; -webkit-overflow-scrolling: touch; visibility:hidden;">
 <iframe width="100%" id="tokenchartiframe" src="" frameborder="0" scrolling="yes" style="height: 510px; min-width: 300px;"></iframe>
-</div>
+ </div>
 </div>
 </div>
 <script src="/assets/vendor/bootstrap/bootstrap.min.js?v=22.1.5.1"></script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e32ef568b5f610e',m:'WIEDwJNDNh7aAU1yF6.jWvhLyEJZSDq8uIAkdn40ey0-1645813093-0-AX8PqCKpEFtdmLzuXL7TqodY01yKr7zvfN/7Yh4TkjWtCSc2+V4h2ibKRM0vstYclD1DpxRAwUnGetVZ60c6EBayfTMBxWLj1CVnLgFTfCZb4DGe14TicnEoCIqEdt+a+WQD1itQ1hX2v4xfzpeljrUdtmIOUhsjU6My9/fLcQb/bqyhg/dzwSgvuB5OyPKZBaNJPNovYb+XRLI4jt5j30YM4wA8EIMOcsB8gsqCOyeh1kT1WLTQw5dP3g2tiPB7183pdWPpGq979ZyaCWetA1cq4FXaHLHZeEzIXZQ5xH6m',s:[0xb3df606e2d,0x052f233ae2],}})();</script></body>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e35335ce9a45a0a',m:'4cOGQJxIG5cceABY9z51N4WjgKqMgYjOWulZUz2fzJg-1645836851-0-AZvO1OFTLA1dT1peyhC/mB6py6QfAzgpieavbBx8A1AfbtrV5RZtXNNt1p/hnpWnb+vZkQiWvGFmPHKQbq1ytHfRxVWFy30YoYaJrYFjCXGrkrZijE1fHVmFGIwdsz/mnqx2GPyNG5dDGWzIHS2gaqTLN4sTdDgWZo7GJXnBlRKj3vZn6ld7Gb4U/gCHXNkfgoue1/Tsjd1URo06sODZaRfacJoOc+sKxsdm0wl1VoXELey/LwHG7LAVjiO+qhLwCXKrXi5/OKzUwvM5/qVPsfe8JeSFX0c95zy5npE/xh20',s:[0xc699ad6dc8,0x99df7474b2],}})();</script></body>
 <script type="text/javascript"> 
     $(window).on('load', function () {
         $('#overlay').fadeOut();
