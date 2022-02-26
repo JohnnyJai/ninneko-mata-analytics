@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css",
-    "main.js": "/ninneko-mata-analytics/static/js/main.23b07cb3.js",
-    "static/media/BURNING_DATA.txt": "/ninneko-mata-analytics/static/media/BURNING_DATA.1005be7dc79357af220f.txt",
-    "static/media/MINTING_DATA.txt": "/ninneko-mata-analytics/static/media/MINTING_DATA.a9926f590e503e641236.txt",
-    "index.html": "/ninneko-mata-analytics/index.html",
-    "main.c6c0da1c.css.map": "/ninneko-mata-analytics/static/css/main.c6c0da1c.css.map",
-    "main.23b07cb3.js.map": "/ninneko-mata-analytics/static/js/main.23b07cb3.js.map"
+    "main.css": "/p2e-analytics/static/css/main.f4846923.css",
+    "main.js": "/p2e-analytics/static/js/main.2f5afd91.js",
+    "static/media/BURNING_DATA.txt": "/p2e-analytics/static/media/BURNING_DATA.1005be7dc79357af220f.txt",
+    "static/media/MINTING_DATA.txt": "/p2e-analytics/static/media/MINTING_DATA.a9926f590e503e641236.txt",
+    "index.html": "/p2e-analytics/index.html",
+    "main.f4846923.css.map": "/p2e-analytics/static/css/main.f4846923.css.map",
+    "main.2f5afd91.js.map": "/p2e-analytics/static/js/main.2f5afd91.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6c0da1c.css",
-    "static/js/main.23b07cb3.js"
+    "static/css/main.f4846923.css",
+    "static/js/main.2f5afd91.js"
   ]
 }
