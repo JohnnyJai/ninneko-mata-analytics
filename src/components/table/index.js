@@ -9,7 +9,33 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
-export default function StickyHeadTable({ columns, data }) {
+export default function StickyHeadTable({ data }) {
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Timestamp",
+        accessor: (row) =>
+          new Date(row.timestep).toISOString().substring(0, 10), // You format date here
+      },
+      {
+        Header: "Mint",
+        accessor: "mint",
+      },
+      {
+        Header: "Burn",
+        accessor: "burn",
+      },
+      {
+        Header: "Mint vs Burn",
+        accessor: "mintVsBurn",
+      },
+      {
+        Header: "Total supply",
+        accessor: "totalSupply",
+      },
+    ],
+    []
+  );
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(25);
 
@@ -30,7 +56,7 @@ export default function StickyHeadTable({ columns, data }) {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden", mt: 2 }} elevation={6}>
+    <Paper sx={{ width: "100%", overflow: "hidden" }} elevation={6}>
       <TableContainer
         sx={{ maxHeight: "calc(100vh - 200px)" }}
         {...getTableProps()}
