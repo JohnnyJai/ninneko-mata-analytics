@@ -1,1 +1,1 @@
-# ninneko-mata-analytics
+# p2e-analytics
