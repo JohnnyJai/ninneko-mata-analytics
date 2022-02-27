@@ -148,7 +148,7 @@ function DashboardContent() {
           overflow: "auto",
         }}
       >
-        <AppBar position="static" color="primary">
+        <AppBar position="static" style={{ background: '#43a047' }}>
           <Toolbar variant="dense">
             <Typography variant="h6" color="inherit" component="div">
               P2E Analytics
