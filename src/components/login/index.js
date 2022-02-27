@@ -8,8 +8,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import "../utils/firebase";
+import { logInWithEmailAndPassword } from "../../utils/firebase";
 
 export default function SignIn({ setIsLoggedIn }) {
   const [error, setError] = useState(null);
@@ -18,8 +17,7 @@ export default function SignIn({ setIsLoggedIn }) {
     setError(null);
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, data.get("email"), data.get("password"))
+    logInWithEmailAndPassword(data.get("email"), data.get("password"))
     .then(() => {
         setIsLoggedIn(true);
     })

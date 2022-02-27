@@ -26,6 +26,8 @@ import {
 import "./App.css";
 import DataTable from "./components/table";
 import LoginForm from "./components/login";
+import { auth } from "./utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Copyright(props) {
   return (
@@ -47,8 +49,10 @@ function Copyright(props) {
 
 function DashboardContent() {
   const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [user, loading, error] = useAuthState(auth);
 
   const fetchData = async (url) => {
     let response = await fetch(url, {
@@ -68,6 +72,13 @@ function DashboardContent() {
   if (tableData.length > 60) {
     interval = 30;
   }
+
+  useEffect(() => {
+    if (loading) return;
+    if (user) {
+      setIsLoggedIn(true);
+    }
+  }, [user, loading, setIsLoggedIn]);
 
   useEffect(() => {
     (async () => {
@@ -103,9 +114,20 @@ function DashboardContent() {
 
       //console.log(BURNING_DATA, MINTING_DATA);
       setData(sortedResult);
-      setLoading(false);
+      setIsLoading(false);
     })();
   }, []);
+
+  if (loading || isLoading) {
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Box className="loader">
+          <CircularProgress />
+        </Box>
+      </Box>
+    );
+  }
 
   if (!isLoggedIn) {
     return <LoginForm setIsLoggedIn={setIsLoggedIn} />;
@@ -114,116 +136,109 @@ function DashboardContent() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      {loading && (
-        <Box className="loader">
-          <CircularProgress />
-        </Box>
-      )}
-      {!loading && (
-        <Box
-          component="main"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === "light"
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: "100vh",
-            overflow: "auto",
-          }}
-        >
-          <AppBar position="static" color="primary">
-            <Toolbar variant="dense">
-              <Typography variant="h6" color="inherit" component="div">
-                P2E Analytics
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <Container height="100vh" maxWidth="xlg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={12} lg={5}>
-                <DataTable data={tableData} />
-              </Grid>
-              <Grid item xs={12} md={12} lg={7}>
-                <Paper
-                  elevation={3}
-                  sx={{ mb: 4 }}
-                  style={{ padding: 12, height: "48%" }}
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      width={500}
-                      height={300}
-                      data={tableData}
-                      margin={{
-                        top: 20,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="timestep"
-                        tickFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                        interval={interval}
-                      />
-                      <YAxis />
-                      <Tooltip
-                        labelFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                      />
-                      <Legend />
-                      <Bar dataKey="burn" fill="#e57373" />
-                      <Bar dataKey="mint" fill="#81c784" />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </Paper>
-                <Paper elevation={3} style={{ padding: 12, height: "48%" }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      width={500}
-                      height={300}
-                      data={tableData}
-                      margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="timestep"
-                        tickFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                        interval={interval}
-                      />
-                      <YAxis />
-                      <Tooltip
-                        labelFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="totalSupply"
-                        stroke="#64b5f6"
-                        activeDot={{ r: 8 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </Paper>
-              </Grid>
+      <Box
+        component="main"
+        sx={{
+          backgroundColor: (theme) =>
+            theme.palette.mode === "light"
+              ? theme.palette.grey[100]
+              : theme.palette.grey[900],
+          flexGrow: 1,
+          height: "100vh",
+          overflow: "auto",
+        }}
+      >
+        <AppBar position="static" color="primary">
+          <Toolbar variant="dense">
+            <Typography variant="h6" color="inherit" component="div">
+              P2E Analytics
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Container height="100vh" maxWidth="xlg" sx={{ mt: 4, mb: 4 }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={12} lg={5}>
+              <DataTable data={tableData} />
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
-          </Container>
-        </Box>
-      )}
+            <Grid item xs={12} md={12} lg={7}>
+              <Paper
+                elevation={3}
+                sx={{ mb: 4 }}
+                style={{ padding: 12, height: "48%" }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={tableData}
+                    margin={{
+                      top: 20,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="timestep"
+                      tickFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                      interval={interval}
+                    />
+                    <YAxis />
+                    <Tooltip
+                      labelFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                    />
+                    <Legend />
+                    <Bar dataKey="burn" fill="#e57373" />
+                    <Bar dataKey="mint" fill="#81c784" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </Paper>
+              <Paper elevation={3} style={{ padding: 12, height: "48%" }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    width={500}
+                    height={300}
+                    data={tableData}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="timestep"
+                      tickFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                      interval={interval}
+                    />
+                    <YAxis />
+                    <Tooltip
+                      labelFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="totalSupply"
+                      stroke="#64b5f6"
+                      activeDot={{ r: 8 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </Paper>
+            </Grid>
+          </Grid>
+          <Copyright sx={{ pt: 4 }} />
+        </Container>
+      </Box>
     </Box>
   );
 }
