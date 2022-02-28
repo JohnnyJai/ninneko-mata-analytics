@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/p2e-analytics/static/css/main.f4846923.css",
-    "main.js": "/p2e-analytics/static/js/main.7615ee6e.js",
-    "static/media/BURNING_DATA.txt": "/p2e-analytics/static/media/BURNING_DATA.827acd7c6c0f2e78534e.txt",
-    "static/media/MINTING_DATA.txt": "/p2e-analytics/static/media/MINTING_DATA.d40d8cb34c3c0cdc21af.txt",
+    "main.js": "/p2e-analytics/static/js/main.5f750fa1.js",
     "index.html": "/p2e-analytics/index.html",
     "main.f4846923.css.map": "/p2e-analytics/static/css/main.f4846923.css.map",
-    "main.7615ee6e.js.map": "/p2e-analytics/static/js/main.7615ee6e.js.map"
+    "main.5f750fa1.js.map": "/p2e-analytics/static/js/main.5f750fa1.js.map"
   },
   "entrypoints": [
     "static/css/main.f4846923.css",
-    "static/js/main.7615ee6e.js"
+    "static/js/main.5f750fa1.js"
   ]
 }
