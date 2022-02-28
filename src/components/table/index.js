@@ -58,7 +58,7 @@ export default function StickyHeadTable({ data }) {
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }} elevation={6}>
       <TableContainer
-        sx={{ maxHeight: "calc(100vh - 200px)" }}
+        sx={{ maxHeight: "calc(50vh - 75px)" }}
         {...getTableProps()}
       >
         <Table className="table" stickyHeader aria-label="sticky table">

@@ -9,8 +9,6 @@ import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import BURNING_DATA_FILE from "./BURNING_DATA.txt";
-import MINTING_DATA_FILE from "./MINTING_DATA.txt";
 import {
   BarChart,
   Bar,
@@ -53,18 +51,7 @@ function DashboardContent() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
-
-  const fetchData = async (url) => {
-    let response = await fetch(url, {
-      method: "GET",
-    });
-    response = await response.text();
-    const lines = response.trim().replace(/ /g, "").split(/\r?\n/);
-    const dataLine = lines.find((line) => line.indexOf("varplotData2ab") > -1);
-    const data = dataLine.replace("varplotData2ab=eval", "");
-    // eslint-disable-next-line no-eval
-    return eval(data);
-  };
+  const [tokens, setTokens] = React.useState([]);
 
   const tableData = Object.values(data);
 
@@ -82,8 +69,11 @@ function DashboardContent() {
 
   useEffect(() => {
     (async () => {
+      const data = await fetch(process.env.PUBLIC_URL + '/data/TOKENS.json').then(response => response.json());
+      setTokens(data)
+      const token = data[0];
       const tempData = {};
-      const BURNING_DATA = await fetchData(BURNING_DATA_FILE);
+      const BURNING_DATA = await fetch(process.env.PUBLIC_URL + `/data/${token.token}_BURN.json`).then(response => response.json());
       BURNING_DATA.forEach((data) => {
         const timestep = data[0];
         if (!(timestep in tempData)) {
@@ -91,7 +81,7 @@ function DashboardContent() {
         }
         tempData[timestep].burn = Math.round(data[8]);
       });
-      const MINTING_DATA = await fetchData(MINTING_DATA_FILE);
+      const MINTING_DATA = await fetch(process.env.PUBLIC_URL + `/data/${token.token}_MINT.json`).then(response => response.json());
       MINTING_DATA.forEach((data) => {
         const timestep = data[0];
         if (!(timestep in tempData)) {
@@ -99,6 +89,10 @@ function DashboardContent() {
         }
         tempData[timestep].mint = Math.round(data[7]);
       });
+      const pieData = await fetch(process.env.PUBLIC_URL + `/data/LOCALSTORAGE.json`).then(response => response.json());
+      const selectedData = pieData[token.token];
+      const now = Date.now();
+      tempData[now] = { timestep: now, mint: selectedData.mint.value, burn: selectedData.burn.value };
       const sortedResult = {};
       let totalSupply = 0;
       Object.keys(tempData)
@@ -111,8 +105,6 @@ function DashboardContent() {
           sortedResult[timestep].totalSupply = totalSupply;
           sortedResult[timestep].mintVsBurn = mintVsBurn;
         });
-
-      //console.log(BURNING_DATA, MINTING_DATA);
       setData(sortedResult);
       setIsLoading(false);
     })();
@@ -155,58 +147,54 @@ function DashboardContent() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container height="100vh" maxWidth="xlg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={12} lg={5}>
-              <DataTable data={tableData} />
-            </Grid>
-            <Grid item xs={12} md={12} lg={7}>
+        <Container maxWidth="xlg" sx={{ mt: 4, mb: 4 }}>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+            <Grid item xs={12} md={12} lg={12} height="40vh">
               <Paper
-                elevation={3}
-                sx={{ mb: 4 }}
-                style={{ padding: 12, height: "48%" }}
-              >
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={tableData}
-                    margin={{
-                      top: 20,
-                      right: 30,
-                      left: 20,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="timestep"
-                      tickFormatter={(timeStr) =>
-                        new Date(timeStr).toISOString().substring(0, 10)
-                      }
-                      interval={interval}
-                    />
-                    <YAxis />
-                    <Tooltip
-                      labelFormatter={(timeStr) =>
-                        new Date(timeStr).toISOString().substring(0, 10)
-                      }
-                    />
-                    <Legend />
-                    <Bar dataKey="burn" fill="#e57373" />
-                    <Bar dataKey="mint" fill="#81c784" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </Paper>
-              <Paper elevation={3} style={{ padding: 12, height: "48%" }}>
+                  elevation={3}
+                  sx={{ p: 2, height: "100%" }}
+                >
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={tableData}
+                      margin={{
+                        top: 20,
+                        right: 50,
+                        left: 20,
+                        bottom: 5,
+                      }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis
+                        dataKey="timestep"
+                        tickFormatter={(timeStr) =>
+                          new Date(timeStr).toISOString().substring(0, 10)
+                        }
+                        interval={interval}
+                      />
+                      <YAxis />
+                      <Tooltip
+                        labelFormatter={(timeStr) =>
+                          new Date(timeStr).toISOString().substring(0, 10)
+                        }
+                      />
+                      <Legend />
+                      <Bar dataKey="burn" fill="#e57373" />
+                      <Bar dataKey="mint" fill="#81c784" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </Paper>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+            <Grid item xs={12} md={12} lg={12} height="40vh">
+              <Paper elevation={3} sx={{ p: 2, height: "100%" }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
-                    width={500}
-                    height={300}
                     data={tableData}
                     margin={{
                       top: 5,
-                      right: 30,
+                      right: 50,
                       left: 20,
                       bottom: 5,
                     }}
@@ -234,6 +222,11 @@ function DashboardContent() {
                   </LineChart>
                 </ResponsiveContainer>
               </Paper>
+            </Grid>
+          </Grid>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+            <Grid item xs={12} md={12} lg={12} height="40vh">
+              <DataTable data={tableData} />
             </Grid>
           </Grid>
           <Copyright sx={{ pt: 4 }} />
