@@ -51,6 +51,7 @@ function DashboardContent() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
+  // eslint-disable-next-line no-unused-vars
   const [tokens, setTokens] = React.useState([]);
 
   const tableData = Object.values(data);
