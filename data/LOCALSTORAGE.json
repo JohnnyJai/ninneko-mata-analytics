@@ -2,11 +2,11 @@
   "MATA": {
     "burn": {
       "txHash": "0xf83d95c1ffe960f91130042de703b651c468e700078cd7320b9d5a81593f6bcc",
-      "value": 14350400
+      "value": 14357600
     },
     "mint": {
       "txHash": "0x1f77767b1089760e9bf20a0568aa923e431921d57e848cfbccf76ca0de1f0dc5",
-      "value": 21398827
+      "value": 21428827
     }
   },
   "UMY": {
