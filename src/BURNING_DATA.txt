@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css?v=22.1.5.1">
-<link rel="stylesheet" href="/assets/css/theme.min.css?v=22.1.5.1">
-<link rel="stylesheet" href="/assets/css/custom.css?v=22.1.5.1">
-<script src="/assets/vendor/jquery/dist/jquery.min.js?v=22.1.5.1"></script>
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css?v=22.2.4.0">
+<link rel="stylesheet" href="/assets/css/theme.min.css?v=22.2.4.0">
+<link rel="stylesheet" href="/assets/css/custom.css?v=22.2.4.0">
+<script src="/assets/vendor/jquery/dist/jquery.min.js?v=22.2.4.0"></script>
 <style>
          .table.tableformat tr td {
             font-size: 8px !important;
@@ -77,12 +77,12 @@
         }
         
     </style>
-<script src="/assets/highstocks-new/js/highstock.js?v=22.1.5.1"></script>
-<script src="/assets/highcharts-new/js/highcharts-more.js?v=22.1.5.1"></script>
-<script src="/assets/highcharts-module/js/annotations.js?v=22.1.5.1"></script>
-<script src="/assets/highslide/highslide-full.min.js?v=22.1.5.1"></script>
-<script src="/assets/highslide/highslide.config.js?v=22.1.5.1" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="/assets/highslide/highslide.css?v=22.1.5.1" />
+<script src="/assets/highstocks-new/js/highstock.js?v=22.2.4.0"></script>
+<script src="/assets/highcharts-new/js/highcharts-more.js?v=22.2.4.0"></script>
+<script src="/assets/highcharts-module/js/annotations.js?v=22.2.4.0"></script>
+<script src="/assets/highslide/highslide-full.min.js?v=22.2.4.0"></script>
+<script src="/assets/highslide/highslide.config.js?v=22.2.4.0" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/assets/highslide/highslide.css?v=22.2.4.0" />
 <script type="text/javascript">    
         var tokenname = 'MATA Token';
         var tokensymbol = 'MATA';
@@ -90,14 +90,14 @@
 
         var contractAddress = '0x175facdd947c995ad547f6ad952d26826758a4da';
         var address = '0x000000000000000000000000000000000000dead';
-        var current_usd_eth_value = 356.55;
+        var current_usd_eth_value = 363.56;
         var chartHeight = 500;
 
         var plotData = eval([]);
         var plotData_datemax = '';
         
-        var plotData2ab = eval([[Date.UTC(2022,0,20),287,0,287,0,67,557100,0,557100],[Date.UTC(2022,0,21),181,0,181,0,60,1780900,0,1223800],[Date.UTC(2022,0,22),92,0,92,0,30,2424300,0,643400],[Date.UTC(2022,0,23),60,0,60,0,25,2824000,0,399700],[Date.UTC(2022,0,24),62,0,62,0,22,3187500,0,363500],[Date.UTC(2022,0,25),160,0,160,0,69,3951400,0,763900],[Date.UTC(2022,0,26),173,0,173,0,70,4984400,0,1033000],[Date.UTC(2022,0,27),169,0,169,0,70,6364100,0,1379700],[Date.UTC(2022,0,28),141,0,141,0,81,7581200,0,1217100],[Date.UTC(2022,0,29),217,0,217,0,88,9118300,0,1537100],[Date.UTC(2022,0,30),173,0,173,0,88,10479800,0,1361500],[Date.UTC(2022,0,31),210,0,210,0,99,11945000,0,1465200],[Date.UTC(2022,1,1),277,0,277,0,136,14221500,0,2276500],[Date.UTC(2022,1,2),176,0,176,0,110,15737500,0,1516000],[Date.UTC(2022,1,3),165,0,165,0,78,17317700,0,1580200],[Date.UTC(2022,1,4),172,0,172,0,90,18870900,0,1553200],[Date.UTC(2022,1,5),153,0,153,0,76,20117000,0,1246100],[Date.UTC(2022,1,6),181,0,181,0,101,21667700,0,1550700],[Date.UTC(2022,1,7),208,0,208,0,112,23677200,0,2009500],[Date.UTC(2022,1,8),208,0,208,0,102,25720400,0,2043200],[Date.UTC(2022,1,9),199,0,199,0,111,27460700,0,1740300],[Date.UTC(2022,1,10),220,0,220,0,118,29490700,0,2030000],[Date.UTC(2022,1,11),156,0,156,0,87,31158700,0,1668000],[Date.UTC(2022,1,12),176,0,176,0,96,32955500,0,1796800],[Date.UTC(2022,1,13),337,0,337,0,212,36262700,0,3307200],[Date.UTC(2022,1,14),344,0,344,0,242,39564600,0,3301900],[Date.UTC(2022,1,15),229,0,229,0,122,41958900,0,2394300],[Date.UTC(2022,1,16),275,0,275,0,144,44910700,0,2951800],[Date.UTC(2022,1,17),277,0,277,0,141,47855400,0,2944700],[Date.UTC(2022,1,18),254,0,254,0,132,50813000,0,2957600],[Date.UTC(2022,1,19),255,0,255,0,147,53766200,0,2953200],[Date.UTC(2022,1,20),333,0,333,0,165,57404400,0,3638200],[Date.UTC(2022,1,21),393,0,393,0,226,61500700,0,4096300],[Date.UTC(2022,1,22),421,0,421,0,195,66261500,0,4760800],[Date.UTC(2022,1,23),407,0,407,0,194,70844900,0,4583400],[Date.UTC(2022,1,24),264,0,264,0,135,73918500,0,3073600],[Date.UTC(2022,1,25),398,0,398,0,194,78015700,0,4097200],[Date.UTC(2022,1,26),426,0,426,0,205,82396700,0,4381000],]);    
-        var plotData2ab_datemax = Date.UTC(2022,1,26);
+        var plotData2ab = eval([[Date.UTC(2022,0,20),287,0,287,0,67,557100,0,557100],[Date.UTC(2022,0,21),181,0,181,0,60,1780900,0,1223800],[Date.UTC(2022,0,22),92,0,92,0,30,2424300,0,643400],[Date.UTC(2022,0,23),60,0,60,0,25,2824000,0,399700],[Date.UTC(2022,0,24),62,0,62,0,22,3187500,0,363500],[Date.UTC(2022,0,25),160,0,160,0,69,3951400,0,763900],[Date.UTC(2022,0,26),173,0,173,0,70,4984400,0,1033000],[Date.UTC(2022,0,27),169,0,169,0,70,6364100,0,1379700],[Date.UTC(2022,0,28),141,0,141,0,81,7581200,0,1217100],[Date.UTC(2022,0,29),217,0,217,0,88,9118300,0,1537100],[Date.UTC(2022,0,30),173,0,173,0,88,10479800,0,1361500],[Date.UTC(2022,0,31),210,0,210,0,99,11945000,0,1465200],[Date.UTC(2022,1,1),277,0,277,0,136,14221500,0,2276500],[Date.UTC(2022,1,2),176,0,176,0,110,15737500,0,1516000],[Date.UTC(2022,1,3),165,0,165,0,78,17317700,0,1580200],[Date.UTC(2022,1,4),172,0,172,0,90,18870900,0,1553200],[Date.UTC(2022,1,5),153,0,153,0,76,20117000,0,1246100],[Date.UTC(2022,1,6),181,0,181,0,101,21667700,0,1550700],[Date.UTC(2022,1,7),208,0,208,0,112,23677200,0,2009500],[Date.UTC(2022,1,8),208,0,208,0,102,25720400,0,2043200],[Date.UTC(2022,1,9),199,0,199,0,111,27460700,0,1740300],[Date.UTC(2022,1,10),220,0,220,0,118,29490700,0,2030000],[Date.UTC(2022,1,11),156,0,156,0,87,31158700,0,1668000],[Date.UTC(2022,1,12),176,0,176,0,96,32955500,0,1796800],[Date.UTC(2022,1,13),337,0,337,0,212,36262700,0,3307200],[Date.UTC(2022,1,14),344,0,344,0,242,39564600,0,3301900],[Date.UTC(2022,1,15),229,0,229,0,122,41958900,0,2394300],[Date.UTC(2022,1,16),275,0,275,0,144,44910700,0,2951800],[Date.UTC(2022,1,17),277,0,277,0,141,47855400,0,2944700],[Date.UTC(2022,1,18),254,0,254,0,132,50813000,0,2957600],[Date.UTC(2022,1,19),255,0,255,0,147,53766200,0,2953200],[Date.UTC(2022,1,20),333,0,333,0,165,57404400,0,3638200],[Date.UTC(2022,1,21),393,0,393,0,226,61500700,0,4096300],[Date.UTC(2022,1,22),421,0,421,0,195,66261500,0,4760800],[Date.UTC(2022,1,23),407,0,407,0,194,70844900,0,4583400],[Date.UTC(2022,1,24),264,0,264,0,135,73918500,0,3073600],[Date.UTC(2022,1,25),398,0,398,0,194,78015700,0,4097200],[Date.UTC(2022,1,26),426,0,426,0,205,82396700,0,4381000],[Date.UTC(2022,1,27),482,0,482,0,231,87122200,0,4725500],]);    
+        var plotData2ab_datemax = Date.UTC(2022,1,27);
 
         var strnodatatxt = "<span class='d-block text-center py-5'>No data points found for the current time series.<br>Note: Chart data is updated daily, you may try checking back later</div></span>";
         var currencySymbol = 'USD';
@@ -729,8 +729,8 @@ Token Transfer Counts</a></li>
 </div>
 </div>
 </div>
-<script src="/assets/vendor/bootstrap/bootstrap.min.js?v=22.1.5.1"></script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e45b4ae8e65578e',m:'CA6bgNQO6.oA1rjMxKn0tIRLXH0Lv41lHoFjhsIvP4g-1646009920-0-ASl6NIgZ93ta+lQp5n1leAz2M62OEMgZvDHoBRFmSMY7eum/xu4EYUBpsINt60YolpHMcn+wNj2EU0FVusK8ihCibLzBWwNh2+3fZ0phtsPmvtOYbp3hZFeszj/dhalRdLpgvBOPhY7jzyanaqy/gm2tP5Bl3OumnVRbEyNgucsNCZ9R8xQHwnQTFmXtTfClvBEq6B7sR8EX0gsBHqAPeErASVWSavwP2k7MjDmJfwG3R0ysNhn88GgereJ9eH1Ywo3D4/XnwqKE29I8M2AiHHniwsewuTiHH3lZf2q2/ixB',s:[0xc4c8206892,0x1da5ccd1b4],}})();</script></body>
+<script src="/assets/vendor/bootstrap/bootstrap.min.js?v=22.2.4.0"></script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e47898959817fa6',m:'iA0rbbT7ZR6oGik3lYHsdT0N8Zh07LUW7PRcqNry_HU-1646029124-0-AcOD3EDLJi0lRJnG6SdVr5POQoh3UCdgkNLslmwskbvgDyx2mkR6ZzjYsFzVNxXF1VpaB9Xd/8j2MuBMYy+BLGkX3vxSAu/K7tV/FJf9QNE5CsEdwrL3s62XgNBkM7JLalZIrs1SpxUtPhvRdo2uRmBWBSsd4ltScwuZLRXDb9dQGOM65vWmdh8tkuanmY88oqPOjmIqW2J9bue2EtceC/VJA5TuEtB5DsuKymA781x4dpBmhnhMlMgyq88aodULyZeK0YZn6D73LZUnIIwlmu1KF/tnGbnHf3pluo/m5HSV',s:[0x463f316ec6,0x6d0ea0c7ea],}})();</script></body>
 <script type="text/javascript"> 
     $(window).on('load', function () {
         $('#overlay').fadeOut();
