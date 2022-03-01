@@ -2,21 +2,21 @@
   "MATA": {
     "burn": {
       "txHash": "0xf83d95c1ffe960f91130042de703b651c468e700078cd7320b9d5a81593f6bcc",
-      "value": 12988900
+      "value": 13077200
     },
     "mint": {
       "txHash": "0x1f77767b1089760e9bf20a0568aa923e431921d57e848cfbccf76ca0de1f0dc5",
-      "value": 19791185
+      "value": 19831185
     }
   },
   "UMY": {
     "burn": {
       "txHash": "0xfc39bd52879458d88c5d15d6dffddebc531c3e92341d481569980fef7c281999",
-      "value": 431775
+      "value": 443475
     },
     "mint": {
       "txHash": "0x87f8c4ef033db947afbdc71f45f0b46268be6ecd37cc83bbdc461e8282710140",
-      "value": 1187803.0500000014
+      "value": 1188623.8500000015
     }
   }
 }
