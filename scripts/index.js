@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
 const cheerio = require('cheerio');
+const { isSameDay } = require('date-fns');
 const DATA_STORAGE_PATH = '../public/data/';
 const TOKENS = require(`${DATA_STORAGE_PATH}TOKENS.json`);
 const STORAGE_FILENAME = path.resolve(__dirname, `${DATA_STORAGE_PATH}LOCALSTORAGE.json`);
@@ -24,11 +25,6 @@ const fetchData = async (url) => {
     });
 }
 
-const datesAreOnSameDay = (first, second) =>
-    first.getFullYear() === second.getFullYear() &&
-    first.getMonth() === second.getMonth() &&
-    first.getDate() === second.getDate();
-
 const fetchDailyData = async (token, key, contractAddress, address) => {
     const url = `https://bscscan.com/token/token-analytics?m=normal&contractAddress=${contractAddress}&a=${address}&lg=en`;
     const data = await fetchData(url);
@@ -41,7 +37,6 @@ const fetchDailyData = async (token, key, contractAddress, address) => {
         console.log(`Data written to file ${FILENAME}`);
     });
 };
-
 
 const fetchChainData = async (token, key, contractAddress, address) => {
     for (let i = 1; i < 100; i++) {
@@ -61,14 +56,23 @@ const fetchChainData = async (token, key, contractAddress, address) => {
             if (!(key in STORAGE[token])) {
                 STORAGE[token][key] = {
                     txHash,
-                    value: value
+                    value: value,
+                    timestamp: timestamp
                 };
             } else {
-                const { txHash: storeTxHash } = STORAGE[token][key];
+                const { txHash: storeTxHash, timestamp: storeTimestamp } = STORAGE[token][key];
                 if (storeTxHash === txHash) {
                     return;
                 }
-                if (datesAreOnSameDay(new Date(), new Date(timestamp))) {
+                const timestampDate = new Date(timestamp);
+                const storeTimestampDate = new Date(storeTimestamp);
+                if (timestampDate.getTime() > storeTimestampDate.getTime() && !isSameDay(storeTimestampDate, timestampDate)) {
+                    STORAGE[token][key] = {
+                        txHash,
+                        value: value,
+                        timestamp: timestamp
+                    };
+                } else if (isSameDay(new Date(), timestampDate)) {
                     STORAGE[token][key]['value'] += value;
                 } else {
                     return;

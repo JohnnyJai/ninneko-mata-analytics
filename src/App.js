@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -9,6 +9,8 @@ import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 import {
   BarChart,
   Bar,
@@ -51,8 +53,14 @@ function DashboardContent() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
-  // eslint-disable-next-line no-unused-vars
   const [tokens, setTokens] = React.useState([]);
+  const [selectedToken, setSelectedToken] = React.useState(null);
+  const [tabIndex, setTabIndex] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setTabIndex(newValue);
+    setSelectedToken(tokens[newValue]);
+  };
 
   const tableData = Object.values(data);
 
@@ -68,48 +76,78 @@ function DashboardContent() {
     }
   }, [user, loading, setIsLoggedIn]);
 
+  const updateData = useCallback(async() => {
+    const tempData = {};
+    if (!selectedToken) {
+      return;
+    }
+    const BURNING_DATA = await fetch(
+      process.env.PUBLIC_URL + `/data/${selectedToken.token}_BURN.json`
+    ).then((response) => response.json());
+    BURNING_DATA.forEach((data) => {
+      const timestep = data[0];
+      if (!(timestep in tempData)) {
+        tempData[timestep] = { timestep, mint: 0, burn: 0 };
+      }
+      tempData[timestep].burn = Math.round(data[8]);
+    });
+    const MINTING_DATA = await fetch(
+      process.env.PUBLIC_URL + `/data/${selectedToken.token}_MINT.json`
+    ).then((response) => response.json());
+    MINTING_DATA.forEach((data) => {
+      const timestep = data[0];
+      if (!(timestep in tempData)) {
+        tempData[timestep] = { timestep, mint: 0, burn: 0 };
+      }
+      tempData[timestep].mint = Math.round(data[7]);
+    });
+    const pieData = await fetch(
+      process.env.PUBLIC_URL + `/data/LOCALSTORAGE.json`
+    ).then((response) => response.json());
+    const selectedData = pieData[selectedToken.token];
+    const now = Date.now();
+    tempData[now] = {
+      timestep: now,
+      mint: selectedData.mint.value,
+      burn: selectedData.burn.value,
+    };
+    const sortedResult = {};
+    let totalSupply = 0;
+    Object.keys(tempData)
+      .sort((a, b) => a - b) // Sortera datum i fallande ordning
+      .forEach((timestep) => {
+        const data = tempData[timestep];
+        sortedResult[timestep] = data;
+        const mintVsBurn = data.mint - data.burn;
+        totalSupply += mintVsBurn;
+        sortedResult[timestep].totalSupply = totalSupply;
+        sortedResult[timestep].mintVsBurn = mintVsBurn;
+      });
+    setData(sortedResult);
+  }, [selectedToken]);
+
   useEffect(() => {
     (async () => {
-      const data = await fetch(process.env.PUBLIC_URL + '/data/TOKENS.json').then(response => response.json());
-      setTokens(data)
-      const token = data[0];
-      const tempData = {};
-      const BURNING_DATA = await fetch(process.env.PUBLIC_URL + `/data/${token.token}_BURN.json`).then(response => response.json());
-      BURNING_DATA.forEach((data) => {
-        const timestep = data[0];
-        if (!(timestep in tempData)) {
-          tempData[timestep] = { timestep, mint: 0, burn: 0 };
-        }
-        tempData[timestep].burn = Math.round(data[8]);
-      });
-      const MINTING_DATA = await fetch(process.env.PUBLIC_URL + `/data/${token.token}_MINT.json`).then(response => response.json());
-      MINTING_DATA.forEach((data) => {
-        const timestep = data[0];
-        if (!(timestep in tempData)) {
-          tempData[timestep] = { timestep, mint: 0, burn: 0 };
-        }
-        tempData[timestep].mint = Math.round(data[7]);
-      });
-      const pieData = await fetch(process.env.PUBLIC_URL + `/data/LOCALSTORAGE.json`).then(response => response.json());
-      const selectedData = pieData[token.token];
-      const now = Date.now();
-      tempData[now] = { timestep: now, mint: selectedData.mint.value, burn: selectedData.burn.value };
-      const sortedResult = {};
-      let totalSupply = 0;
-      Object.keys(tempData)
-        .sort((a, b) => a - b) // Sortera datum i fallande ordning
-        .forEach((timestep) => {
-          const data = tempData[timestep];
-          sortedResult[timestep] = data;
-          const mintVsBurn = data.mint - data.burn;
-          totalSupply += mintVsBurn;
-          sortedResult[timestep].totalSupply = totalSupply;
-          sortedResult[timestep].mintVsBurn = mintVsBurn;
-        });
-      setData(sortedResult);
+      const data = await fetch(
+        process.env.PUBLIC_URL + "/data/TOKENS.json"
+      ).then((response) => response.json());
+      setTokens(data);
+      if (selectedToken === null) {
+        setSelectedToken(data[0]);
+      }
+      await updateData();
       setIsLoading(false);
     })();
+  }, [selectedToken, updateData]);
+
+  useEffect(() => {
+    setInterval(() => {
+      updateData();
+    }, 1000 * 60);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
 
   if (loading || isLoading) {
     return (
@@ -141,7 +179,7 @@ function DashboardContent() {
           overflow: "auto",
         }}
       >
-        <AppBar position="static" style={{ background: '#43a047' }}>
+        <AppBar position="static" style={{ background: "#43a047" }}>
           <Toolbar variant="dense">
             <Typography variant="h6" color="inherit" component="div">
               P2E Analytics
@@ -149,45 +187,53 @@ function DashboardContent() {
           </Toolbar>
         </AppBar>
         <Container maxWidth="xlg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+          <Box sx={{ borderBottom: 1, borderColor: "#666", mb: 2 }}>
+            <Tabs
+              value={tabIndex}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              {tokens.map((item) => (
+                <Tab key={item.token} label={item.token} />
+              ))}
+            </Tabs>
+          </Box>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4 }}>
             <Grid item xs={12} md={12} lg={12} height="40vh">
-              <Paper
-                  elevation={3}
-                  sx={{ p: 2, height: "100%" }}
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={tableData}
-                      margin={{
-                        top: 20,
-                        right: 50,
-                        left: 20,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="timestep"
-                        tickFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                        interval={interval}
-                      />
-                      <YAxis />
-                      <Tooltip
-                        labelFormatter={(timeStr) =>
-                          new Date(timeStr).toISOString().substring(0, 10)
-                        }
-                      />
-                      <Legend />
-                      <Bar dataKey="burn" fill="#e57373" />
-                      <Bar dataKey="mint" fill="#81c784" />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </Paper>
+              <Paper elevation={3} sx={{ p: 2, height: "100%" }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={tableData}
+                    margin={{
+                      top: 20,
+                      right: 50,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="timestep"
+                      tickFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                      interval={interval}
+                    />
+                    <YAxis />
+                    <Tooltip
+                      labelFormatter={(timeStr) =>
+                        new Date(timeStr).toISOString().substring(0, 10)
+                      }
+                    />
+                    <Legend />
+                    <Bar dataKey="burn" fill="#e57373" />
+                    <Bar dataKey="mint" fill="#81c784" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </Paper>
             </Grid>
           </Grid>
-          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4 }}>
             <Grid item xs={12} md={12} lg={12} height="40vh">
               <Paper elevation={3} sx={{ p: 2, height: "100%" }}>
                 <ResponsiveContainer width="100%" height="100%">
@@ -225,7 +271,7 @@ function DashboardContent() {
               </Paper>
             </Grid>
           </Grid>
-          <Grid container spacing={3} direction={"row"} sx={{ mb: 4}}>
+          <Grid container spacing={3} direction={"row"} sx={{ mb: 4 }}>
             <Grid item xs={12} md={12} lg={12} height="40vh">
               <DataTable data={tableData} />
             </Grid>
