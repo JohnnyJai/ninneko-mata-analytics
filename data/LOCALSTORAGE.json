@@ -13,14 +13,14 @@
   },
   "UMY": {
     "burn": {
-      "txHash": "0x24fede0a3da1b89afa968e40ded46516f832b56ce1103da67c1d95272b1db895",
-      "value": 310775,
-      "timestamp": "2022-03-04 22:34:38"
+      "txHash": "0xaae25a000eeb36e2929b0c72776cd88a20d0c66a6d9e71c0e96beb6c590211cf",
+      "value": 311390,
+      "timestamp": "2022-03-04 22:46:23"
     },
     "mint": {
-      "txHash": "0xa590b0e32762f0a5498870e2b5983462235877cc799ba8f9e702867d5c121d29",
-      "value": 433001.4500000003,
-      "timestamp": "2022-03-04 22:25:10"
+      "txHash": "0x6f6542ae1271fba5dc2ca9e3374bf2004b30639d51c76f6748d56b8d94163187",
+      "value": 434324.8000000003,
+      "timestamp": "2022-03-04 22:40:26"
     }
   }
 }
