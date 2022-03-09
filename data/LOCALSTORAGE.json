@@ -1,14 +1,14 @@
 {
   "MATA": {
     "burn": {
-      "txHash": "0xa0e8daa0792939664143c1e2b89a04580f30f7428cfea913f1bda623c7024179",
-      "value": 4199100,
-      "timestamp": "2022-03-09 21:45:00"
+      "txHash": "0x83d6bc7206b1868025b4475e81d164856a2ac8bd7db1f9953ce06936b5bb0763",
+      "value": 4212100,
+      "timestamp": "2022-03-09 22:10:02"
     },
     "mint": {
-      "txHash": "0xa18bdfa575e75c8e54597a4f5167b7bb158279c67d86262200ffaa5424c0ab25",
-      "value": 5374875,
-      "timestamp": "2022-03-09 21:56:03"
+      "txHash": "0xe4bacfc9a5d3a3e518c053c8be76f52e33148e711e7b366779361de6cdafff66",
+      "value": 5509282,
+      "timestamp": "2022-03-09 22:23:08"
     }
   },
   "UMY": {
