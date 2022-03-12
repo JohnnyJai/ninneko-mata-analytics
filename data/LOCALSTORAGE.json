@@ -13,9 +13,9 @@
   },
   "UMY": {
     "burn": {
-      "txHash": "0x051245ce7f91d91de5e5dd151d8d64cd42da20a1fa266ef222508fbb58e400d0",
-      "value": 19505,
-      "timestamp": "2022-03-12 6:34:37"
+      "txHash": "0x22f2e3fb5994367aacb51b3956a640477ef0079f963a8769c62697655927e152",
+      "value": 19540,
+      "timestamp": "2022-03-12 6:45:46"
     },
     "mint": {
       "txHash": "0xb84f23ab2336a8390cdfdcd6a7cd3bc44a8eb1e0d4ba40ad008d4b7edab5dafc",
