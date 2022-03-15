@@ -1,26 +1,26 @@
 {
   "MATA": {
     "burn": {
-      "txHash": "0x46c6dc248d700b5c40bb2580c79961755294d2cb3db097d77b361bd9ab373d42",
-      "value": 3214700,
-      "timestamp": "2022-03-15 13:38:31"
+      "txHash": "0xd9ab35304644ca98e304117d7e312353b469ccbcbab63af2ea9fc7b93591bf98",
+      "value": 3294400,
+      "timestamp": "2022-03-15 13:45:10"
     },
     "mint": {
-      "txHash": "0x0d6c923819ed0794230ac7da1a6836a2e0e14d3f0ee8c28e75bc5567852f520b",
-      "value": 3994800,
-      "timestamp": "2022-03-15 13:37:43"
+      "txHash": "0x1fdce1fc7f1c284cedeba53d51b7fdea02f98c8cccaeb308274346f9c1c75d25",
+      "value": 3986683,
+      "timestamp": "2022-03-15 13:39:28"
     }
   },
   "UMY": {
     "burn": {
-      "txHash": "0x790e1811222411d6bb0f6fc5a9148dee6e920280a41cee39b14f6259ae4dc50d",
-      "value": 21805,
-      "timestamp": "2022-03-15 13:21:16"
+      "txHash": "0x0aff0f067d696dc325ed8d774ae881fd43fa74ca143295f7d942c5d287d17063",
+      "value": 22820,
+      "timestamp": "2022-03-15 13:47:46"
     },
     "mint": {
-      "txHash": "0xc72ce4b06981386fd6b5206a915b8b4034aa246940aa8cba4dbf74f359c1adcc",
-      "value": 152800.85000000003,
-      "timestamp": "2022-03-15 13:31:19"
+      "txHash": "0x3fc772d465ce74941241ef379fc30d5d779fcc79857b1777e96ed5f907031b50",
+      "value": 160399.9,
+      "timestamp": "2022-03-15 13:53:49"
     }
   }
 }
