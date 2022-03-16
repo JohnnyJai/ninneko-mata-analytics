@@ -1,9 +1,9 @@
 {
   "MATA": {
     "burn": {
-      "txHash": "0xf29ee6dd6e4439ac047ab870c58cedc2452869e38cf14e7c6146cc7672b9d64c",
-      "value": 6822000,
-      "timestamp": "2022-03-16 22:32:02"
+      "txHash": "0xd3640d165cb112d7d811cd61a0e1eda81d472d851da796004d3106ec1be68db5",
+      "value": 6885000,
+      "timestamp": "2022-03-16 22:46:38"
     },
     "mint": {
       "txHash": "0x5a4dfed338291095843c3c664599f41324dad126f7f514402936605b299a2005",
