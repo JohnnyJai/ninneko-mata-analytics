@@ -6,16 +6,16 @@
       "timestamp": "2022-03-22 18:26:35"
     },
     "mint": {
-      "txHash": "0x0ab57291c1c24f2f11f2ed7ba27c871e0fa063b1d8c37160c7bc265d9a51a642",
-      "value": 9421573,
-      "timestamp": "2022-03-22 18:28:50"
+      "txHash": "0xeab26fa9a7c176c3abef0cb1d5e84d72ab369e3feba096d9aa7d6d771bbb5de8",
+      "value": 9573373,
+      "timestamp": "2022-03-22 18:46:08"
     }
   },
   "UMY": {
     "burn": {
-      "txHash": "0x132be43f288a9a9ce647d1fe59457676e1fe7f7d36092125f667b6b29864cd24",
-      "value": 397565,
-      "timestamp": "2022-03-22 18:30:41"
+      "txHash": "0x68bc46b0264f3c93e86faedb3a3bdba4046ee7260d4dd9492ea83605b4438d1f",
+      "value": 423965,
+      "timestamp": "2022-03-22 18:49:15"
     },
     "mint": {
       "txHash": "0xe7b755b952264e44989829e17d217dfb7771003707db342b073f7b90e741e832",
