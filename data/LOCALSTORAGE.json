@@ -6,9 +6,9 @@
       "timestamp": "2022-04-04 5:58:56"
     },
     "mint": {
-      "txHash": "0x6cc1b225dcd9183b7fd3f27471c191a23624e8bb0eb18b8a3b81e271e67f785f",
-      "value": 3492475,
-      "timestamp": "2022-04-04 6:05:31"
+      "txHash": "0x7749126c74fa87159d3e9a2c5d705cd148cd1e18ed7898e449a15a27abfc8f1a",
+      "value": 3864600,
+      "timestamp": "2022-04-04 6:58:30"
     }
   },
   "UMY": {
@@ -18,9 +18,9 @@
       "timestamp": "2022-04-04 5:50:52"
     },
     "mint": {
-      "txHash": "0xa955d6778e5f3136ac21d1f6e234745c67faeb0c2cfb2efbebb38303d4ffb6bd",
-      "value": 51073.899999999994,
-      "timestamp": "2022-04-04 6:03:15"
+      "txHash": "0xace8da15a5e8c07a7c98965474a5a2e2a50a20e32ea95e9c173954e0f081203c",
+      "value": 52997.649999999994,
+      "timestamp": "2022-04-04 7:02:10"
     }
   }
 }
